@@ -2,13 +2,13 @@
 
 - Reutiliza executar_treinamentos() de adaline_treino.py (mesmos seeds/constantes)
 - Plota EQM por epoca de T1 (seed 10) e T2 (seed 20) lado a lado na mesma figura
-- Salva em docs/answers/adaline_eqm_t1_t2.png para embutir no markdown
+- Salva em perceptron_adaline/docs/answers/adaline_eqm_t1_t2.png para embutir no markdown
 """
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 
-from adaline.adaline_treino import executar_treinamentos
+from perceptron_adaline.adaline.adaline_treino import executar_treinamentos
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SAIDA_PNG = BASE_DIR / "docs" / "answers" / "adaline_eqm_t1_t2.png"

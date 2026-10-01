@@ -1,14 +1,14 @@
 """Teste do perceptron — item 3 do trabalho.
 
 Reutiliza os 5 modelos treinados em perceptron_treino.py (mesmos seeds)
-e classifica as 10 amostras de data/oleo_teste.csv.
+e classifica as 10 amostras de perceptron_adaline/data/oleo_teste.csv.
 """
 import csv
 from pathlib import Path
 
 import numpy as np
 
-from perceptron.perceptron_treino import executar_treinamentos
+from perceptron_adaline.perceptron.perceptron_treino import executar_treinamentos
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 TESTE_CSV = BASE_DIR / "data" / "oleo_teste.csv"

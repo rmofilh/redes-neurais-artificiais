@@ -10,7 +10,7 @@ from pathlib import Path
 
 import numpy as np
 
-from perceptron.perceptron_modelo import Perceptron
+from perceptron_adaline.perceptron.perceptron_modelo import Perceptron
 
 SEEDS = [10, 20, 30, 40, 50]
 TAXA = 0.01

@@ -2,12 +2,12 @@
 
 ## Item 1 — 5 treinamentos
 
-- Modelo: `adaline/adaline_modelo.py` — 4 entradas + bias `x0 = -1`, `u = -w0 + x1*w1 + x2*w2 + x3*w3 + x4*w4`, ativação bipolar `y = +1 se u >= 0 senão -1` aplicada só em `prever()`.
+- Modelo: `perceptron_adaline/adaline/adaline_modelo.py` — 4 entradas + bias `x0 = -1`, `u = -w0 + x1*w1 + x2*w2 + x3*w3 + x4*w4`, ativação bipolar `y = +1 se u >= 0 senão -1` aplicada só em `prever()`.
 - Regra Delta (LMS) online com erro linear `(d - u)`: sempre atualiza `w += eta*(d-u)*x` e `w0 += eta*(d-u)*(-1)`, com `eta = 0.0025`.
 - Inicialização fora da classe, `U[0,1]`, gerador reiniciado por seed: T1=10, T2=20, T3=30, T4=40, T5=50.
-- Dados: `data/adaline_treinamento.csv` (35 padrões do anexo).
+- Dados: `perceptron_adaline/data/adaline_treinamento.csv` (35 padrões do anexo).
 - Parada: variação do EQM `|EQM_atual - EQM_anterior| < 1e-6` (teto `max_epocas = 1000`).
-- Execução: `python3 -m adaline.adaline_treino` (`executar_treinamentos()`).
+- Execução: `python3 -m perceptron_adaline.adaline.adaline_treino` (`executar_treinamentos()`).
 
 ## Item 2 — Vetores de pesos e épocas
 
@@ -25,7 +25,7 @@ Todos os 5 treinamentos convergiram pelo critério de precisão sem atingir o te
 
 ## Item 3 — EQM por época (T1 e T2)
 
-- Curvas geradas por `python3 -m adaline.adaline_graficos` a partir de `historico_eqm` (1 ponto por época), T1 = 926 épocas e T2 = 893 épocas.
+- Curvas geradas por `python3 -m perceptron_adaline.adaline.adaline_graficos` a partir de `historico_eqm` (1 ponto por época), T1 = 926 épocas e T2 = 893 épocas.
 - T1 (seed 10): EQM 2.337256 → 0.301998; T2 (seed 20): EQM 3.810701 → 0.301998 — decaimento típico do LMS até o mesmo patamar (~0.302).
 - T2 parte de EQM maior por causa da inicialização distinta, mas converge ao mesmo mínimo (consistente com pesos finais iguais do item 2).
 
@@ -33,7 +33,7 @@ Todos os 5 treinamentos convergiram pelo critério de precisão sem atingir o te
 
 ## Item 4 — Classificação das 15 amostras
 
-Legenda: `-1 = válvula A`, `+1 = válvula B`. Execução: `python3 -m adaline.adaline_teste` (retreina T1–T5 com os mesmos seeds do item 2 e aplica `prever()` em `data/adaline_teste.csv`).
+Legenda: `-1 = válvula A`, `+1 = válvula B`. Execução: `python3 -m perceptron_adaline.adaline.adaline_teste` (retreina T1–T5 com os mesmos seeds do item 2 e aplica `prever()` em `perceptron_adaline/data/adaline_teste.csv`).
 
 | Amostra | x1 | x2 | x3 | x4 | y(T1) | y(T2) | y(T3) | y(T4) | y(T5) |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|

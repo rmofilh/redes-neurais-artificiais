@@ -1,14 +1,14 @@
 """Teste do Adaline — item 4 do trabalho.
 
 Reutiliza os 5 modelos treinados em adaline_treino.py (mesmos seeds)
-e classifica as 15 amostras de data/adaline_teste.csv.
+e classifica as 15 amostras de perceptron_adaline/data/adaline_teste.csv.
 """
 import csv
 from pathlib import Path
 
 import numpy as np
 
-from adaline.adaline_treino import executar_treinamentos
+from perceptron_adaline.adaline.adaline_treino import executar_treinamentos
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 TESTE_CSV = BASE_DIR / "data" / "adaline_teste.csv"

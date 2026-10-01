@@ -2,12 +2,12 @@
 
 ## Item 1 — 5 treinamentos
 
-- Modelo: `perceptron/perceptron_modelo.py` — 3 entradas + bias `x0 = -1`, `net = -w0 + x1*w1 + x2*w2 + x3*w3`, ativação bipolar `y = +1 se net >= 0 senão -1`.
+- Modelo: `perceptron_adaline/perceptron/perceptron_modelo.py` — 3 entradas + bias `x0 = -1`, `net = -w0 + x1*w1 + x2*w2 + x3*w3`, ativação bipolar `y = +1 se net >= 0 senão -1`.
 - Regra supervisionada com `(d - y)`: se `y != d`, `w += eta*(d-y)*x` e `w0 += eta*(d-y)*(-1)`, com `eta = 0.01`.
 - Inicialização fora da classe, `U[0,1]`, gerador reiniciado por seed: T1=10, T2=20, T3=30, T4=40, T5=50.
-- Dados: `data/oleo_treinamento.csv` (30 padrões do anexo).
+- Dados: `perceptron_adaline/data/oleo_treinamento.csv` (30 padrões do anexo).
 - Parada: erro zero em uma época completa (teto `max_epocas = 1000`).
-- Execução: `python3 -m perceptron.perceptron_treino` (`executar_treinamentos()`).
+- Execução: `python3 -m perceptron_adaline.perceptron.perceptron_treino` (`executar_treinamentos()`).
 
 ## Item 2 — Vetores de pesos e épocas
 
@@ -25,7 +25,7 @@ Todos os 5 treinamentos convergiram (acurácia 1.000 no treino).
 
 ## Item 3 — Classificação das 10 amostras
 
-Legenda: `-1 = C1`, `+1 = C2`. Execução: `python3 -m perceptron.perceptron_teste` (retreina T1–T5 com os mesmos seeds do item 2 e aplica `prever()` em `data/oleo_teste.csv`).
+Legenda: `-1 = C1`, `+1 = C2`. Execução: `python3 -m perceptron_adaline.perceptron.perceptron_teste` (retreina T1–T5 com os mesmos seeds do item 2 e aplica `prever()` em `perceptron_adaline/data/oleo_teste.csv`).
 
 | Amostra | x1 | x2 | x3 | y(T1) | y(T2) | y(T3) | y(T4) | y(T5) |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|

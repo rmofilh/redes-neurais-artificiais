@@ -10,7 +10,7 @@ from pathlib import Path
 
 import numpy as np
 
-from adaline.adaline_modelo import Adaline
+from perceptron_adaline.adaline.adaline_modelo import Adaline
 
 SEEDS = [10, 20, 30, 40, 50]
 TAXA = 0.0025
